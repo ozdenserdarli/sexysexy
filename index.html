@@ -46,14 +46,25 @@
                 var mapElement = document.getElementById('map');
 
                 // Create the Google Map using our element and options defined above
-                var map = new google.maps.Map(mapElement, mapOptions);
+                var map = new google.maps.Map(mapElement, mapOptions);              
+                
 
                 // Let's also add a marker while we're at it
+<<<<<<< Updated upstream
                 var marker1 = new google.maps.Marker({
                     position: new google.maps.LatLng(31.952162, 35.233154),
                     map: map
                     
+=======
+                
+     var marker1 = new google.maps.Marker({
+    position: new google.maps.LatLng(31.952162,35.233154),
+    map: map
+         
+>>>>>>> Stashed changes
                 });
+                
+              
         //Palestinian Territories
         var marker2 = new google.maps.Marker({
                     position: new google.maps.LatLng(30.585164, 36.238414),
@@ -432,11 +443,28 @@ var marker36 = new google.maps.Marker({
                    //Dominican Republic
                });
 
-                            google.maps.event.addListener(marker46, 'click', function () {
-    window.location = marker46.position;
-});
- 
-            }
+                
+    var contentString = '<div id="content">'+
+                                  'This is some dummy content for the info window'+
+                                  '</div>';     
+             
+         
+    var ourMarkers = [marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11, marker12, marker13, marker14, marker15, marker16, marker17, marker18, marker19, marker20, marker21, marker22, marker23, marker24, marker25, marker26, marker27, marker28, marker29, marker30, marker31, marker32, marker33, marker34, marker35, marker36, marker37, marker38, marker39, marker40, marker41, marker42, marker43, marker44, marker45, marker46, marker47, marker48, marker49, marker50, marker51, marker52, marker53, marker54, marker55, marker56, marker57, marker58, marker59, marker60, marker61, marker62, marker63, marker64, marker65, marker66, marker67, marker68, marker69, marker70, marker71];
+
+for (var x = 0; x<= 70 ; x +=1)
+{
+    var ourMarker = ourMarkers[x];
+    var infowindow = new google.maps.InfoWindow({
+                   content: contentString
+                   });
+
+   ourMarker.addListener('click', function() {
+   infowindow.open(map, ourMarker);
+                 });
+};            
+        }             
+
+
         </script>
     </head>
     <body>
