@@ -52,6 +52,7 @@
                 var marker1 = new google.maps.Marker({
                     position: new google.maps.LatLng(31.952162, 35.233154),
                     map: map
+                    
                 });
         //Palestinian Territories
         var marker2 = new google.maps.Marker({
@@ -63,10 +64,12 @@
                     position: new google.maps.LatLng(46.227638, 2.213749),
                     map: map
                 });
+
         //France
         var marker4 = new google.maps.Marker({
                     position: new google.maps.LatLng(1.352083, 103.819836),
                     map: map
+
                 });
         //Singapore
         var marker5 = new google.maps.Marker({
@@ -81,18 +84,21 @@
         //Mexico
         var marker7 = new google.maps.Marker({
                     position: new google.maps.LatLng(60.128161, 18.643501),
+                    title: "Sweden",
                     map: map
                 });
         //Sweden
 
+
         var marker8 = new google.maps.Marker({
-                    position: new google.maps.LatLng(45.943161, 2.496676),
+                    position: new google.maps.LatLng(45.943161, 24.96676),
+
                     map: map
                 });
         //Romania
 
         var marker9 = new google.maps.Marker({
-                    position: new google.maps.LatLng(42.733883, 2.548583),
+                    position: new google.maps.LatLng(42.733883, 25.48583),
                     map: map
                 });
         //Bugaria
@@ -122,7 +128,7 @@
                 });
         //Pakistan
         var marker15 = new google.maps.Marker({
-                    position: new google.maps.LatLng(20.593684, 7.896288),
+                    position: new google.maps.LatLng(20.593684, 78.96288),
                     map: map
                 });
         //India
@@ -161,7 +167,7 @@
        //Turkey
 
   var marker22 = new google.maps.Marker({
-                   position: new google.maps.LatLng(3.586166, 104.195397),
+                   position: new google.maps.LatLng(35.86166, 104.195397),
                    map: map                    
                });
        //China  
@@ -179,7 +185,7 @@ var marker24 = new google.maps.Marker({
        //Azerbaijan
 
 var marker25 = new google.maps.Marker({
-                   position: new google.maps.LatLng(48.379433, 3.116558),
+                   position: new google.maps.LatLng(48.379433, 31.16558),
                    map: map                    
                });
        //Ukraine
@@ -239,7 +245,7 @@ var marker34 = new google.maps.Marker({
        //Lebanon
 
 var marker35 = new google.maps.Marker({
-                   position: new google.maps.LatLng(6.192411, 25.748151 ),
+                   position: new google.maps.LatLng(61.92411, 25.748151 ),
                    map: map                    
        //Finland
                     
@@ -250,7 +256,7 @@ var marker36 = new google.maps.Marker({
                });
        //New Zealand
        var marker37 = new google.maps.Marker({
-                   position: new google.maps.LatLng(5.626392, 9.501785),
+                   position: new google.maps.LatLng(56.26392, 9.501785),
                    map: map                    
                });
        //Denmark
@@ -295,12 +301,12 @@ var marker36 = new google.maps.Marker({
                });
        //Japan
         var marker46 = new google.maps.Marker({
-                   position: new google.maps.LatLng(4.187194, 1.256738),
+                   position: new google.maps.LatLng(41.87194, 12.56738),
                    map: map                    
                });
        //Italy
        var marker47 = new google.maps.Marker({
-                   position: new google.maps.LatLng(2.369781, 120.960515),
+                   position: new google.maps.LatLng(23.69781, 120.960515),
                    map: map                    
                });
        //Taiwan
@@ -315,10 +321,10 @@ var marker36 = new google.maps.Marker({
                });
        //Austria
        var marker50 = new google.maps.Marker({
-                   position: new google.maps.LatLng(-26.522503, 31.465866),
+                   position: new google.maps.LatLng(46.818188, 8.227512),
                    map: map                    
                });
-       //Swaziland
+       //Switzerland
        var marker51 = new google.maps.Marker({
                    position: new google.maps.LatLng(22.396428, 114.109497),
                    map: map                    
@@ -340,12 +346,12 @@ var marker36 = new google.maps.Marker({
                    //Liberia
                });
                 var marker55 = new google.maps.Marker({
-                   position: new google.maps.LatLng(61.52401, 23.881275),
+                   position: new google.maps.LatLng(55.169438, 23.881275),
                    map: map
                    //Lithuania
                });
                 var marker56 = new google.maps.Marker({
-                   position: new google.maps.LatLng(55.169438, 105.318756),
+                   position: new google.maps.LatLng(61.52401, 105.318756),
                    map: map
                    //Russia
                });
@@ -425,6 +431,11 @@ var marker36 = new google.maps.Marker({
                    map: map
                    //Dominican Republic
                });
+
+                            google.maps.event.addListener(marker46, 'click', function () {
+    window.location = marker46.position;
+});
+ 
             }
         </script>
     </head>
@@ -438,4 +449,3 @@ var marker36 = new google.maps.Marker({
 
     </body>
 </html>
-
