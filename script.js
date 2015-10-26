@@ -4,20 +4,19 @@ for(var i = 0; i < ourIds.length; i++) {
     
     var filmId = ourIds[i];
 
-    /*$.http.get('www.api.stockholmfilmfestival.se', {
-    headers: {'X-API-KEY': 'YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH=='}
-	});*/
+    
     
     $.ajax({
-        url: "http://api.stockholmfilmfestival.se//v1/films/film/film_id/"+filmId+"/format/json/API-Key/YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH",
+        url: "http://api.stockholmfilmfestival.se/v1/films/film/film_id/"+filmId+"/format/json/API-Key/YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH",
         dataType: "json",
         header: {'X-API-KEY': 'YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH'},
-        success: function(results) {
-            console.log(results);
+        success: function(result) {
+            var myCountry="Sweden";
+            if (result.filmCountry_en==myCountry) 
+                console.log(result.filmCountry_en);
         },
         done:function(result){
         	//console.log(result);
         }
     });
 }
-
