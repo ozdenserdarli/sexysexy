@@ -49,37 +49,46 @@
                 var map = new google.maps.Map(mapElement, mapOptions);
 
                 // Let's also add a marker while we're at it
+
                 var marker1 = new google.maps.Marker({
                     position: new google.maps.LatLng(31.952162, 35.233154),
                     title: "Palestine",
-                    map: map
+                    map: map,
+                    data: 10040
                     
                 });
+                    
+
         //Palestinian Territories
         var marker2 = new google.maps.Marker({
                     position: new google.maps.LatLng(30.585164, 36.238414),
                     title: "Jordan",
-                    map: map
+                    map: map,
+                    data: 10040
+    
                 });
         //Jordan
         var marker3 = new google.maps.Marker({
                     position: new google.maps.LatLng(46.227638, 2.213749),
                     title: "France",
-                    map: map
+                    map: map,
+                    data: [10040 , 10014, 10110,10098,9986, 10138, 10085,10042,9987,10044, 9991, 9992, 10021,10049,10035,9995,10051,10052,10053,10054,9996,10094, 10055,9997,10022, 10056, 10036, 10151,10096, 10002, 10026, 10011, 10003, 10059, 10061]
                 });
 
         //France
         var marker4 = new google.maps.Marker({
                     position: new google.maps.LatLng(1.352083, 103.819836),
                     title: "Singapore",
-                    map: map
+                    map: map,
+                    data: 10081
 
                 });
         //Singapore
         var marker5 = new google.maps.Marker({
                     position: new google.maps.LatLng(37.09024,  -95.712891),
                     title: "USA",
-                    map: map
+                    map: map,
+                    data: [10062,10063,10171,10136, 10139, 10064, 10042, 10141, 10123, 9990,10065, 10066,10067,9993,10068,10069,10124,10143, 10144,10071, 10127,10070,10072, 10009,10073, 10074, 10116, 10075,10010, 10150,10151, 10164, 10076, 10152, 10077, 10078, 10079, 10080, 10154, 10155, 10172]
                 });
         //USA
         var marker6 = new google.maps.Marker({
@@ -503,24 +512,68 @@ var marker36 = new google.maps.Marker({
                    map: map
                    //Dominican Republic
                });
-
-                            google.maps.event.addListener(marker46, 'click', function () {
-    window.location = marker46.position;
-});
-
-                            var contentString = '<div id="content">'+
-                                   'This is some dummy content for the info window'+
-                                   '</div>';
-
-               var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                    });
-
-                  marker66.addListener('click', function() {
-                      infowindow.open(map, marker66);
-                  });
+                
+                var marker72 = new google.maps.Marker({
+                   position: new google.maps.LatLng(53.41291, -8.24389),
+                   title: "Irland",
+                   map: map,
+                   
+                   //Irland
+               });
  
+                 
+
+
+                var ourMarkers = [marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11, marker12, marker13, marker14, marker15, marker16, marker17, marker18, marker19, marker20, marker21, marker22, marker23, marker24, marker25, marker26, marker27, marker28, marker29, marker30, marker31, marker32, marker33, marker34, marker35, marker36, marker37, marker38, marker39, marker40, marker41, marker42, marker43, marker44, marker45, marker46, marker47, marker48, marker49, marker50, marker51, marker52, marker53, marker54, marker55, marker56, marker57, marker58, marker59, marker60, marker61, marker62, marker63, marker64, marker65, marker66, marker67, marker68, marker69, marker70, marker71, marker72];
+                  
+var contentString = "list of movies for that country and BUY TICKET buttom";
+var ourIds = ["9985","9986","9987","9988","9989","9990","9991","9992","9993","9994","9995","9996","9997","9998","9999","10000","10001","10002","10003","10004","10005","10006","10007","10008","10009","10010","10011","10012","10013","10014","10015","10016","10017","10018","10019","10020","10021","10022","10023","10024","10025","10026","10027","10028","10029","10030","10031","10032","10033","10034","10035","10036","10037","10038","10039","10040","10041","10042","10043","10044","10045","10046","10047","10048","10049","10050","10051","10052","10053","10054","10055","10056","10057","10058","10059","10060","10061","10062","10063","10064","10065","10066","10067","10068","10069","10070","10071","10072","10073","10074","10075","10076","10077","10078","10079","10080","10081","10082","10083","10084","10085","10086","10087","10088","10089","10090","10091","10092","10093","10094","10095","10096","10097","10098","10099","10100","10101","10102","10103","10104","10105","10106","10107","10108","10109","10110","10111","10112","10113","10114","10115","10116","10117","10118","10119","10120","10121","10122","10123","10124","10125","10126","10127","10128","10129","10130","10131","10132","10133","10134","10135","10136","10137","10138","10139","10140","10141","10142","10143","10144","10145","10146","10147","10148","10149","10150","10151","10152","10153","10154","10155","10156","10157","10158","10159","10160","10161","10162","10163","10164","1016","10171","10172","10173","10174","10175","10185","10186","10187","10188","10189","10190","10191","10192","10193","10194"];
+        
+        for(var i = 0; i < ourIds.length; i++) {
+   
+   var filmId = ourIds[i];
+
+ 
+   
+   $.ajax({
+       url: "http://api.stockholmfilmfestival.se//v1/films/film/film_id/"+filmId+"/format/json/API-Key/YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH",
+       dataType: "json",
+       header: {'X-API-KEY': 'YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH'},
+       success: function(result) {
+            if (result.filmCountry_en==countryName)
+                console.log(result);
+               
+       },
+       done:function(result){
+           console.log(result);
+       }
+   });
+}
+        
+        
+     
+ 
+                 
+                
+
+for (var x = 0; x<= 71 ; x +=1)
+{
+
+  var ourMarker = ourMarkers[x];
+
+             var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+                  });
+
+                ourMarker.addListener('click', function() {
+                    infowindow.open(map, this);
+                });
+                }; 
+
+
+            
             }
+
         </script>
     </head>
     <body>
