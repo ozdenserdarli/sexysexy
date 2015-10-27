@@ -48,467 +48,540 @@
                 // Create the Google Map using our element and options defined above
                 var map = new google.maps.Map(mapElement, mapOptions);
 
-                // Let's also add a marker while we're at it
-
-                var marker1 = new google.maps.Marker({
-                    position: new google.maps.LatLng(31.952162, 35.233154),
-                    title: "Palestine",
-                    map: map
-                    
-                });
-                    
-
-        //Palestinian Territories
-        var marker2 = new google.maps.Marker({
-                    position: new google.maps.LatLng(30.585164, 36.238414),
-                    title: "Jordan",
-                    map: map
+           // Let's also add a marker while we're at it
+               var marker1 = new google.maps.Marker({
+                   position: new google.maps.LatLng(31.952162, 35.233154),
+                   title: "Palestine",
+                   movieId: 10040,
+                   map: map
                    
-    
-                });
-        //Jordan
-        var marker3 = new google.maps.Marker({
-                    position: new google.maps.LatLng(46.227638, 2.213749),
-                    title: "France",
-                    map: map
-                    
-                });
-
-        //France
-        var marker4 = new google.maps.Marker({
-                    position: new google.maps.LatLng(1.352083, 103.819836),
-                    title: "Singapore",
-                    map: map
-               
-
-                });
-        //Singapore
-        var marker5 = new google.maps.Marker({
-                    position: new google.maps.LatLng(37.09024,  -95.712891),
-                    title: "USA",
-                    map: map
-
-                });
-        //USA
-        var marker6 = new google.maps.Marker({
-                    position: new google.maps.LatLng(23.634501, -102.552784),
-                    title: "Mexico",
-                    map: map
-                });
-        //Mexico
-        var marker7 = new google.maps.Marker({
-                    position: new google.maps.LatLng(60.128161, 18.643501),
-                    title: "Sweden",
-                    map: map
-                });
-        //Sweden
-
-
-        var marker8 = new google.maps.Marker({
-                    position: new google.maps.LatLng(45.943161, 24.96676),
-                    title: "Romania",
-                    map: map
-                });
-        //Romania
-
-        var marker9 = new google.maps.Marker({
-                    position: new google.maps.LatLng(42.733883, 25.48583),
-                    title:"Bulgaria",
-                    map: map
-                });
-        //Bugaria
-        var marker10 = new google.maps.Marker({
-                    position: new google.maps.LatLng(49.817492, 15.472962),
-                    title: "Czech Republic",
-                    map: map
-                });
-        //Czech Republic
-        var marker11 = new google.maps.Marker({
-                    position: new google.maps.LatLng(52.132633, 5.291266),
-                    title: "The Netherlands",
-                    map: map
-                });
-        //Netherlands
-        var marker12 = new google.maps.Marker({
-                    position: new google.maps.LatLng(35.907757, 127.766922),
-                    title: "Republic of Korea",
-                    map: map
-                });
-        //South Korea
-        var marker13 = new google.maps.Marker({
-                    position: new google.maps.LatLng(56.130366, -106.346771),
-                    title: "Canada",
-                    map: map
-                });
-        //Canada
-        var marker14 = new google.maps.Marker({
-                    position: new google.maps.LatLng(30.375321, 69.345116),
-                    title: "Pakistan",
-                    map: map
-                });
-        //Pakistan
-        var marker15 = new google.maps.Marker({
-                    position: new google.maps.LatLng(20.593684, 78.96288),
-                    title: "India",
-                    map: map
-                });
-        //India
-        var marker16 = new google.maps.Marker({
-                    position: new google.maps.LatLng(51.165691, 10.451526),
-                    title: "Germany",
-                    map: map
-                });
-        //Germany
-        var marker17 = new google.maps.Marker({
-                    position: new google.maps.LatLng(4.570868,  -74.297333),
-                    title: "Colombia",
-                    map: map
-                }); 
-        //Colombia
-        var marker18 = new google.maps.Marker({
-                   position: new google.maps.LatLng(33.886917, 9.537499),
-                   title: "Tunisia",
+               });
+       //Palestinian Territories
+       var marker2 = new google.maps.Marker({
+                   position: new google.maps.LatLng(30.585164, 36.238414),
+                   title: "Jordan",
+                   movieId: 10040,
                    map: map
                });
-       //Tunisia
-
-       var marker19 = new google.maps.Marker({
-                   position: new google.maps.LatLng(50.503887, 4.469936),
-                   title: "Belgium",
-                   map: map                    
+       //Jordan
+       var marker3 = new google.maps.Marker({
+                   position: new google.maps.LatLng(46.227638, 2.213749),
+                   title: "France",
+                   movieId: [10040, 10014, 10110, 10098, 9986, 10138, 10085, 10042, 9987, 10044, 9991, 9992, 10021, 10049, 10035, 9995, 10051, 10052, 10053, 10054, 9996, 10094, 10055, 9997, 10022, 10056, 10036, 10151,10096, 10002, 10026, 10011, 10003, 10059, 10061],
+                   map: map
                });
-       //Belgium
 
-       var marker20 = new google.maps.Marker({
-                   position: new google.maps.LatLng(31.046051, 34.851612),
-                   title: "Israel",
-                   map: map                    
-               });
-       //Israel
+       //France
+       var marker4 = new google.maps.Marker({
+                   position: new google.maps.LatLng(1.352083, 103.819836),
+                   title: "Singapore",
+                   movieId: 10081,
+                   map: map
 
-      var marker21 = new google.maps.Marker({
-                   position: new google.maps.LatLng(38.963745, 35.243322),
-                   title: "Turkey",
-                   map: map                    
                });
-       //Turkey
+       //Singapore
+       var marker5 = new google.maps.Marker({
+                   position: new google.maps.LatLng(37.09024,  -95.712891),
+                   title: "USA",
+                   movieId: [10062, 10063, 10171, 10136, 10139, 10064, 10042, 10141, 10123, 9990, 10065, 10066, 10067, 9993, 10068, 10069, 10124, 10143, 10144,10071, 10127,10070, 10072, 10009, 10073, 10074, 10116, 10075,10010, 10150,10151, 10164, 10076, 10152, 10077, 10078, 10079, 10080, 10154, 10155, 10172],
+                   map: map
+               });
+       //USA
+       var marker6 = new google.maps.Marker({
+                   position: new google.maps.LatLng(23.634501, -102.552784),
+                   title: "Mexico",
+                   movieId: [10062, 10141, 9987, 10100, 10101, 10105, 10109, 10012],
+                   map: map
+               });
+       //Mexico
+       var marker7 = new google.maps.Marker({
+                   position: new google.maps.LatLng(60.128161, 18.643501),
+                   title: "Sweden",
+                   movieId: [10189, 10119, 10185, 10186, 10007, 9991,10187, 10018, 10175, 10032, 10174, 10019, 10045, 10033, 10112, 10188, 10190, 10023, 10191, 10192, 10037, 10153, 10193, 10194],
+                   map: map
+               });
+       //Sweden
 
-  var marker22 = new google.maps.Marker({
-                   position: new google.maps.LatLng(35.86166, 104.195397),
-                   title: "China",
-                   map: map                    
-               });
-       //China  
 
- var marker23 = new google.maps.Marker({
-                   position: new google.maps.LatLng(14.058324, 108.277199),
-                   title: "Vietnam",
-                   map: map                    
+       var marker8 = new google.maps.Marker({
+                   position: new google.maps.LatLng(45.943161, 24.96676),
+                   title: "Romania",
+                   movieId: [10041, 10142, 10112],
+                   map: map
                });
-       //Vietnam
+       //Romania
+
+       var marker9 = new google.maps.Marker({
+                   position: new google.maps.LatLng(42.733883, 25.48583),
+                   title:"Bulgaria",
+                   movieId: 10041,
+                   map: map
+               });
+       //Bugaria
+
+var marker10 = new google.maps.Marker({
+                   position: new google.maps.LatLng(49.817492, 15.472962),
+                   title: "Czech Republic",
+                   movieId: [10041, 10047, 10053],
+                   map: map
+               });
+       //Czech Republic
+       var marker11 = new google.maps.Marker({
+                   position: new google.maps.LatLng(52.132633, 5.291266),
+                   title: "The Netherlands",
+                   movieId: [10156, 10035, 9999, 10002],
+                   map: map
+               });
+       //Netherlands
+       var marker12 = new google.maps.Marker({
+                   position: new google.maps.LatLng(35.907757, 127.766922),
+                   title: "Republic of Korea",
+                   movieId: [10082, 10084, 10088, 10091],
+                   map: map
+               });
+       //South Korea
+       var marker13 = new google.maps.Marker({
+                   position: new google.maps.LatLng(56.130366, -106.346771),
+                   title: "Canada",
+                   movieId: [10013, 10137, 10031, 10043, 10163, 10027, 10117, 10172, 10012],
+                   map: map
+               });
+       //Canada
+       var marker14 = new google.maps.Marker({
+                   position: new google.maps.LatLng(30.375321, 69.345116),
+                   title: "Pakistan",
+                   movieId: 10171,
+                   map: map
+               });
+       //Pakistan
+       var marker15 = new google.maps.Marker({
+                   position: new google.maps.LatLng(20.593684, 78.96288),
+                   title: "India",
+                   movieId: [10083, 10128, 10094, 10010],
+                   map: map
+               });
+       //India
+       var marker16 = new google.maps.Marker({
+                   position: new google.maps.LatLng(51.165691, 10.451526),
+                   title: "Germany",
+                   movieId: [10083, 10085, 10142, 10158, 10125, 10101, 10020, 10102, 9997, 10115, 10148, 10103, 10151, 10029, 10003, 10005],
+                   map: map
+               });
+       //Germany
+       var marker17 = new google.maps.Marker({
+                   position: new google.maps.LatLng(4.570868,  -74.297333),
+                   title: "Colombia",
+                   movieId: [10098, 10104, 10107, 10134],
+                   map: map
+               }); 
+       //Colombia
+       var marker18 = new google.maps.Marker({
+                  position: new google.maps.LatLng(33.886917, 9.537499),
+                  title: "Tunisia",
+                  movieId: 9986,
+                  map: map
+              });
+      //Tunisia
+
+      var marker19 = new google.maps.Marker({
+                  position: new google.maps.LatLng(50.503887, 4.469936),
+                  title: "Belgium",
+                  movieId: [9986, 10016, 9992, 10053, 9996, 10024, 10061],
+                  map: map                    
+              });
+      //Belgium
+
+var marker20 = new google.maps.Marker({
+                  position: new google.maps.LatLng(31.046051, 34.851612),
+                  title: "Israel",
+                  movieId: [10006, 10122, 10004],
+                  map: map                    
+              });
+      //Israel
+
+     var marker21 = new google.maps.Marker({
+                  position: new google.maps.LatLng(38.963745, 35.243322),
+                  title: "Turkey",
+                  movieId: [10120, 10160, 9997, 10147],
+                  map: map                    
+              });
+      //Turkey
+
+ var marker22 = new google.maps.Marker({
+                  position: new google.maps.LatLng(35.86166, 104.195397),
+                  title: "China",
+                  movieId: [10138, 10089, 10151],
+                  map: map                    
+              });
+      //China  
+
+var marker23 = new google.maps.Marker({
+                  position: new google.maps.LatLng(14.058324, 108.277199),
+                  title: "Vietnam",
+                  movieId: 10085,
+                  map: map                    
+              });
+      //Vietnam
 
 var marker24 = new google.maps.Marker({
-                   position: new google.maps.LatLng(40.143105, 47.576927),
-                   title: "Azerbaijan",
-                   map: map                    
-               });
-       //Azerbaijan
+                  position: new google.maps.LatLng(40.143105, 47.576927),
+                  title: "Azerbaijan",
+                  movieId: 10015,
+                  map: map                    
+              });
+      //Azerbaijan
 
 var marker25 = new google.maps.Marker({
-                   position: new google.maps.LatLng(48.379433, 31.16558),
-                   title: "Ukraine",
-                   map: map                    
-               });
-       //Ukraine
+                  position: new google.maps.LatLng(48.379433, 31.16558),
+                  title: "Ukraine",
+                  movieId: [10062, 10063, 10171, 10136, 10139, 10064],
+                  map: map                    
+              });
+      //Ukraine
 
 var marker26 = new google.maps.Marker({
-                   position: new google.maps.LatLng(28.394857, 84.124008),
-                   title: "Nepal",
-                   map: map                    
-               });
-       //Nepal
+                  position: new google.maps.LatLng(28.394857, 84.124008),
+                  title: "Nepal",
+                  movieId: 10086,
+                  map: map                    
+              });
+      //Nepal
 
 var marker27 = new google.maps.Marker({
-                   position: new google.maps.LatLng(15.870032, 100.992541),
-                   title: "Thailand",
-                   map: map                    
-               });
-       //Thailand
+                  position: new google.maps.LatLng(15.870032, 100.992541),
+                  title: "Thailand",
+                  movieId: 10087,
+                  map: map                    
+              });
+      //Thailand
 
 var marker28 = new google.maps.Marker({
-                   position: new google.maps.LatLng(55.378051, -3.435973),
-                   title: "UK",
-                   map: map                    
-               });
-       //United Kingdom
+                  position: new google.maps.LatLng(55.378051, -3.435973),
+                  title: "UK",
+                  movieId: [10140, 10042, 10142, 10017, 10050, 10035, 10146, 10149, 10010, 10150, 10036, 10057, 10058, 10130, 10038, 10059],
+                  map: map                    
+              });
+      //United Kingdom
 
 var marker29 = new google.maps.Marker({
-                   position: new google.maps.LatLng(-32.522779, -55.765835),
-                   title: "Uruguay",
-                   map: map                    
-               });
-       //Uruguay
+                  position: new google.maps.LatLng(-32.522779, -55.765835),
+                  title: "Uruguay",
+                  movieId: [9988, 9999],
+                  map: map                    
+              });
+      //Uruguay
 
 var marker30 = new google.maps.Marker({
                    position: new google.maps.LatLng(-35.675147, -71.542969),
                    title: "Chile",
-                   map: map                    
+                   map: map,
+                   movieId: [10099, 10102]
+    
+     
                });
        //Chile
 
 var marker31 = new google.maps.Marker({
                    position: new google.maps.LatLng(40.463667, -3.74922),
                    title: "Spain",
-                   map: map                    
+                   map: map,
+                   movieId: [10121, 9992,10102,10162, 10151, 10118]
+   
                });
        //Spain
 
 var marker32 = new google.maps.Marker({
                    position: new google.maps.LatLng(-25.274398, 133.775136),
                    title: "Australia",
-                   map: map                    
+                   map: map,
+                   movieId: 9989
+               
+   
                });
        //Australia
 
 var marker33 = new google.maps.Marker({
                    position: new google.maps.LatLng(51.919438, 19.145136),
                    title: "Poland",
-                   map: map                    
+                   map: map,
+                   movieId: [10122, 9991]
+    
                });
        //Poland
 
 var marker34 = new google.maps.Marker({
                    position: new google.maps.LatLng(33.854721, 35.862285),
                    title: "Lebanon",
-                   map: map                    
+                   map: map,
+                   movieId: [10157, 10028]
+   
                });
        //Lebanon
 
 var marker35 = new google.maps.Marker({
                    position: new google.maps.LatLng(61.92411, 25.748151 ),
                    title: "Finland",
-                   map: map                    
+                   map: map,
+                   movieId: 10159
+ 
        //Finland
                     
                 });
 var marker36 = new google.maps.Marker({
                   position: new google.maps.LatLng(-40.900557, 174.885971),
                   title: "New Zeeland",
-                  map: map
+                  map: map,
+                  movieId: 9993
               });
       //New Zealand
       var marker37 = new google.maps.Marker({
                   position: new google.maps.LatLng(56.26392, 9.501785),
                   title: "Danmark",
-                  map: map                    
+                  map: map,
+                  movieId: [10045, 9995, 10133, 10039]
               });
       //Denmark
        var marker38 = new google.maps.Marker({
                   position: new google.maps.LatLng(7.946527, -1.023194),
                   title: "Ghana",
-                  map: map                    
+                  map: map,
+                  movieId:10045
               });
       //Ghana
        var marker39 = new google.maps.Marker({
                   position: new google.maps.LatLng(21.521757, -77.781167),
                   title: "Cuba",
-                  map: map                    
+                  map: map,
+                  movieId: 10161
               });
       //Cuba
        var marker40 = new google.maps.Marker({
                   position: new google.maps.LatLng(23.424076, 53.847818),
                   title: "United Arab Emirates",
-                  map: map                    
+                  map: map,
+            movieId: 10111
               });
       //United Arab Emirates
        var marker41 = new google.maps.Marker({
                   position: new google.maps.LatLng(45.1, 15.2),
                   title: "Croatia",
-                  map: map                    
+                  map: map,
+            movieId: 10046
               });
       //Croatia
        var marker42 = new google.maps.Marker({
                   position: new google.maps.LatLng(46.151241, 14.995463),
                   title: "Slovenia",
-                  map: map
+                  map: map,
+            movieId: 10046
        
               });
       //Slovenia
        var marker43 = new google.maps.Marker({
                   position: new google.maps.LatLng(44.016521, 21.005859),
                   title: "Serbia",
-                  map: map                    
+                  map: map,
+            movieId:10046
            
               });
       //Serbia
        var marker44 = new google.maps.Marker({
                   position: new google.maps.LatLng(12.879721, 121.774017),
                   title: "Philipines",
-                  map: map                    
+                  map: map,
+            movieId: [10008, 10113,10131]
               });
       //Philippines
        var marker45 = new google.maps.Marker({
                   position: new google.maps.LatLng(36.204824, 138.252924),
                   title: "Japan",
-                  map: map                    
+                  map: map,
+            movieId: [10126, 10092, 10095  , 10135]
               });
       //Japan
        var marker46 = new google.maps.Marker({
                   position: new google.maps.LatLng(41.87194, 12.56738),
                   title: "Italy",
-                  map: map                    
+                  map: map,
+            movieId:[10145, 10114,9985, 10150, 10048, 10003, 10059]
               });
       //Italy
       var marker47 = new google.maps.Marker({
                   position: new google.maps.LatLng(23.69781, 120.960515),
                   title: "Taiwan",
-                  map: map                              
+                  map: map,
+           movieId: 10090
                });
        //Taiwan
        var marker48 = new google.maps.Marker({
                   position: new google.maps.LatLng(48.669026, 19.699024),
                   title: "Slovakia",
-                  map: map                    
+                  map: map,
+            movieId: 10047
               });
       //Slovakia
       var marker49 = new google.maps.Marker({
                   position: new google.maps.LatLng(47.516231, 14.550072),
                   title: "Austria",
-                  map: map                    
+                  map: map,
+           movieId: 10114
               });
       //Austria
       var marker50 = new google.maps.Marker({
                   position: new google.maps.LatLng(46.818188, 8.227512),
                   title: "Switzerland",
-                  map: map                    
+                  map: map,
+           movieId: [10114, 10003, 10012]
               });
       //Switzerland
       var marker51 = new google.maps.Marker({
                   position: new google.maps.LatLng(22.396428, 114.109497),
                   title: "Hong Kong",
-                  map: map                    
+                  map: map,
+           movieId: 9994
               });
       //Hong Kong
       var marker52 = new google.maps.Marker({
                   position: new google.maps.LatLng(39.074208, 21.824312),
                   title: "Greece",
-                  map: map                    
+                  map: map,
+           movieId:[10035, 10115]
               });
       //Greece
       var marker53 = new google.maps.Marker({
                   position: new google.maps.LatLng(-38.416097, -63.616672),
                   title: "Argentina",
-                  map: map                    
+                  map: map,
+           movieId:[10102, 10148, 10103]
               });
       //Argentina
       var marker54 = new google.maps.Marker({
                   position: new google.maps.LatLng(6.428055, -9.429499),
                   title: "Liberia",
-                  map: map
+                  map: map,
+           movieId:10116
                   //Liberia
               });
                var marker55 = new google.maps.Marker({
                   position: new google.maps.LatLng(55.169438, 23.881275),
                   title: "Lithuania",
-                  map: map
+                  map: map,
+                    movieId: [10056, 10002]
                   //Lithuania
               });
                var marker56 = new google.maps.Marker({
                   position: new google.maps.LatLng(61.52401, 105.318756),
                    title: "Russia",
-                  map: map
+                  map: map,
+                    movieId:10056
                   //Russia
               });
                 var marker57 = new google.maps.Marker({
                   position: new google.maps.LatLng(9.145, 40.489673),
                   title: "Ethiopia",
-                  map: map
+                  map: map,
+                     movieId:10000
                   //Ethiopia
               });
                  var marker58 = new google.maps.Marker({
                   position: new google.maps.LatLng(40.339852, 127.510093),
                   title: "Korea",
-                  map: map
+                  map: map,
+                      movieId: [10129, 10151]
                   //North Korea
               });
 
                  var marker59 = new google.maps.Marker({
                   position: new google.maps.LatLng(25.354826, 51.183884),
                   title: "Qatar",
-                  map: map
+                  map: map,
+                      movieId: [9997, 10096]
                   //Qatar
              
                });
                   var marker60 = new google.maps.Marker({
                    position: new google.maps.LatLng(47.162494, 19.503304),
                    title: "Hungary",
-                   map: map
+                   map: map,
+                       movieId: [10001, 10005]
                    //Hungary
                });
                   var marker61 = new google.maps.Marker({
                    position: new google.maps.LatLng(49.815273, 6.129583),
                    title: "Luxembourg",
-                   map: map
+                   map: map,
+                       movieId:10058
                    //Luxembourg
                });
                   var marker62 = new google.maps.Marker({
                    position: new google.maps.LatLng(41.153332, 20.168331),
                    title: "Albania",
-                   map: map
+                   map: map,
+                       movieId:10003
                    //Albania
                });
                   var marker63 = new google.maps.Marker({
                    position: new google.maps.LatLng(42.602636, 20.902977),
                    title: "Kosovo",
-                   map: map
+                   map: map,
+                       movieId: 10003
                    //Kosovo
                });
                   var marker64 = new google.maps.Marker({
                    position: new google.maps.LatLng(32.427908, 53.688046),
                    title: "Iran",
-                   map: map
+                   map: map,
+                       movieId: [10093, 9998, 10060]
                    //Iran
                });
                   var marker65 = new google.maps.Marker({
                    position: new google.maps.LatLng(6.42375, -66.58973),
                    title: "Venezuela",
-                   map: map
+                   map: map,
+                       movieId: 10165
                    //Venezulea
                });
                   var marker66 = new google.maps.Marker({
                    position: new google.maps.LatLng(-14.235004, -51.92528),
                    title: "Brazil",
-                   map: map
+                   map: map,
+                       movieId: [9999, 10106, 10108]
                    //Brazil
                });
                    var marker67 = new google.maps.Marker({
                    position: new google.maps.LatLng(23.684994, 90.356331),
                    title: "Bangladesh",
-                   map: map
+                   map: map,
+                        movieId: 10097
                    //Bangladesh
                });
                    var marker68 = new google.maps.Marker({
                    position: new google.maps.LatLng(64.963051, -19.020835),
                    title: "Iceland",
-                   map: map
+                   map: map,
+                    movieId: 10039
                    //Iceland
                });
                    var marker69 = new google.maps.Marker({
                    position: new google.maps.LatLng(60.472024, 8.468946),
                    title: "Norway",
-                   map: map
+                   map: map,
+                    movieId: [10055, 10030]
                    //Norway
                });
                    var marker70 = new google.maps.Marker({
                    position: new google.maps.LatLng(31.791702, -7.09262),
                    title: "Morocco",
-                   map: map
+                   map: map,
+                   movieId:[10055, 10030]
                    //Morocco
                });
                    var marker71 = new google.maps.Marker({
                    position: new google.maps.LatLng(18.735693, -70.162651),
                    title: "Dominican Republic",
-                   map: map
+                   map: map,
+                   movieId: 10012
+                       
                    //Dominican Republic
                });
                 
@@ -516,9 +589,11 @@ var marker36 = new google.maps.Marker({
                    position: new google.maps.LatLng(53.41291, -8.24389),
                    title: "Irland",
                    map: map,
+                   movieId : 10035
                    
                    //Irland
                });
+ 
  
                  
 
