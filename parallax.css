@@ -51,6 +51,7 @@ background-color: #010101;
 .mission-etc p{
     padding-right: 15%;
     padding-left: 15%;
+    margin-bottom: 150px;
 }
     
 
@@ -134,13 +135,15 @@ a:visited {
 
 }
 
-.STHLM p{
+.STHLM{
     color:white;
     font-size: 20px;
     text-align: center;
     padding-right: 15%;
     padding-left: 15%;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
+    font-family: 'helvetica', serif;
+    
     
 }
     
