@@ -48,10 +48,11 @@ background-color: #010101;
   
 }
 
-.mission-etc p{
+.mission-etc {
     padding-right: 15%;
     padding-left: 15%;
     margin-bottom: 150px;
+    color: white;
 }
     
 
@@ -132,6 +133,7 @@ a:visited {
     color:white;
     padding-right: 15%;
     padding-left: 15%;
+    font-family: 'helvetica', serif;
 
 }
 
