@@ -1,0 +1,845 @@
+<!doctype html>
+<html>
+  <head>
+    <title>STHLM FILM MAP</title>
+  
+    
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:900' rel='stylesheet' type='text/css'>
+    <link href="parallax.css" rel="stylesheet" type="text/css">
+ 
+      
+    <script src="parallax.js"></script>
+         
+            <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 1100px;
+                height: 600px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                zoom:1;
+                margin-left:auto; 
+                margin-right:auto;
+                color:black;
+
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 2,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(4.187194, 1.256738), // Italy
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#120d19"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#efefef"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#7a7a7a"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#7a7a7a"},{"lightness":25}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#7a7a7a"},{"lightness":70}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#353535"}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker1 = new google.maps.Marker({
+                    position: new google.maps.LatLng(31.952162, 35.233154),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/salongen">Dégradé ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/3000_nights"> 3000 Nights</a>',
+                    customInfo: [10040, 10096],
+                    map: map
+                    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                    
+                    
+                });
+        //Palestinian Territories
+        var marker2 = new google.maps.Marker({
+                    position: new google.maps.LatLng(30.585164, 36.238414),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/3000_nights"> 3000 Nights</a>',
+                    customInfo: [10040],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Jordan
+        var marker3 = new google.maps.Marker({
+                    position: new google.maps.LatLng(46.227638, 2.213749),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/as_i_open_my_eyes">As I Open My Eyes ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_chosen_ones"> The Chosen Ones ★ </a>' +'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/efterskalv">The Here After ★ </a>' + '<a href= "http://www.stockholmfilmfestival.se/en/festival/2015/film/evolution_2015"> Evolution ★ </a>' +'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/louder_than_bombs">Louder Than Bombs ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/maryland">Maryland ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/mustang">Mustang ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_summer_of_sangaile">The Summer Of Sangaile ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sworn_virgin">Sworn Virgin ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/tomorrow_2015">Tomorrow ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/a_few_seconds">A Few Seconds ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/impression_of_a_war">Impression Of A War ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_pain">The Pain ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sunday_lunch">Sunday Lunch ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_lobster">The Lobster ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_program_2015">The Program ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/3000_nights"> 3000 Nights ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/carol_2015">Carol ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/diary_of_a_chambermaid">Diary Of A Chambermaid ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/land_legs">Land Legs ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/macadamian_stories">Macademian Stories ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/madame_courage">Madame Courage ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/marguerite">Marguerite ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_measure_of_a_man">The Measure Of A Man ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/much_loved_2015">Much Loved ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/peace_to_us_in_our_dreams">Peace To Us In Our Dreams ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/tale_of_tales">Tale Of Tales ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/valley_of_love">Vally Of Love ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/big_father">Big Father, Small Father And Other Stories ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/masaan">Masaan ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/salongen">Dégradé ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/anna_2015">Anna ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/adama">Adama ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/behemoth">Behemoth ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_propaganda_game">The Propaganda Name</a>',
+                    customInfo: [10040, 10014, 10110, 10098, 9986, 10138, 10085, 10042, 9987, 10044, 9991, 9992, 10021, 10049, 10035, 9995, 10051, 10052, 10053, 10054, 9996, 10094, 10055, 9997, 10022, 10056, 10036, 10151,10096, 10002, 10026, 10011, 10003, 10059, 10061],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+
+        //France
+        var marker4 = new google.maps.Marker({
+                    position: new google.maps.LatLng(1.352083, 103.819836),
+            title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/3688">3688</a>',
+                    customInfo: [10081],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Singapore
+        var marker5 = new google.maps.Marker({
+                    position: new google.maps.LatLng(37.09024,  -95.712891),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_diary_of_a_teenage_girl">The Diary Of A Teenage Girl ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/free_in_deed">Free In Deed ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/mekko">Mekko ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/parched">Parched ★  </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/carol_2015">Carol ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/600_miles">600 Miles ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/7_chinese_brothers">7 Chiense Brothers ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/breaking_a_monster">Breaking A Monster ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/dope">Dope ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/entertainment">Entertainment ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/experimenter">Experimenter ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/funny_bunny">Funny Bunny ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/go_with_me_2015">Go With Me ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/james_white">James White ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/i_smile_back">I Smile Back ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/me_and_earl_and_the_dying_girl">Me And Earl And The Dying Girl ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_missing_girl_2015">The Missing Girl ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/night_owls">Night Owls ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_overnight">The Overnight ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/seed_money_the_chuck_holmes_story">Seed Money: The Chuck Holmens Story ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sneakerheadz">Sneakerheadz ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/stockholm_pennsylvania">Stockholm, Pennsylvania ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/tangerine">Tangerine ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/unexpected_2015">Unexpected ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/out_of_my_hand">Out Of Hand ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_devils_candy">The Devils Candy ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/green_room">Green Room ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_invitation_2015">The Invitation ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/an_open_secret_2015">An Open Secret ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_black_panthers">The Black Panthers: Vangurad Of The Revolution ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/cartel_land_2015">Cartel Land ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/gtfo_2015">GTFO ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_hunting_ground">The Hunting Ground ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/peggy_guggenheim">Peggy Guggenheim: Art Addict ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_propaganda_game">The Propaganda Name ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_seventh_fire">The Seventh Fire ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/welcome_to_leith">Welcome To Leith ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_wolfpack">The Wolfpack ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/riot">Riot ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/among_the_believers">Among The Belivers ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/this_changes_everything">The Changes Everything </a>',
+                    customInfo: [10062, 10063, 10171, 10136, 10139, 10064, 10042, 10141, 10123, 9990, 10065, 10066, 10067, 9993, 10068, 10069, 10124, 10143, 10144,10071, 10127,10070, 10072, 10009, 10073, 10074, 10116, 10075,10010, 10150,10151, 10164, 10076, 10152, 10077, 10078, 10079, 10080, 10154, 10155, 10172],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //USA
+        var marker6 = new google.maps.Marker({
+                    position: new google.maps.LatLng(23.634501, -102.552784),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/yo">Yo ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_chosen_ones"> The Chosen Ones ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/600_miles">600 Miles ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/evilness_2015">Evilness ★ </a>' +'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/i_promise_you_anarchy">I Promise You Anarchy ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_thin_yellow_line">The Thin Yellow Line ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/walking_distance">Walking Distance ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/cartel_land_2015">Cartel Land</a>',
+                    customInfo: [10062, 10141, 9987, 10100, 10101, 10105, 10109, 10012],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Mexico
+        
+            var marker7 = new google.maps.Marker({
+                    position: new google.maps.LatLng(60.128161, 18.643501),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/ingrid_ekman">09:55-11:05 Ingrid Ekman, Bergsgatan 4B </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/alena">Alena ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/audition_2015">Audition ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/dear_director">Dear Director ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/det_vita_folket">White People ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/efterskalv">The Here After ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/flykten_fran_enplansvillorna">The Escape ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/francis">Francis ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/forvaret">Detained ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/gentlemen_gangsters">Gentlemen & Gangsters ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/gerilla">Gerilla ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/girls_and_boys">Girls and Boys ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/gold_coast_2015">Gold Coast ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/hingsten_2015">Stallion ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/in_pursuit_of_a_better_life">In Pursuit of a Better Life ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/in_ut">IN-OUT ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/jag_vill_na_dig">I Turn To You ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/prologue">Prologue ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/radioamatoren">The Radio Amateur ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/rinkebysvenska">Ghettoswedish ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/shes_wild_again_tonight">She’s Wild Again Tonight ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_swedish_theory_of_love">The Swedish Theory of Love ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/under_rymdskeppet">Beneath the Spaceship ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/vi_kanner_inget_alls">Asunder</a>',
+                    customInfo: [10189, 10119, 10185, 10186, 10007, 9991,10187, 10018, 10175, 10032, 10174, 10019, 10045, 10033, 10112, 10188, 10190, 10023, 10191, 10192, 10037, 10153, 10193, 10194],
+                    map: map
+                ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Sweden
+
+
+        var marker8 = new google.maps.Marker({
+                    position: new google.maps.LatLng(45.943161, 24.96676),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/aferim">Aferim! ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/chuck_norris_communism">Chuck Norris vs Communism ★ </a>'+ '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/in_pursuit_of_a_better_life">In Pursuit of a Better Life</a>',
+                    customInfo: [10041, 10142, 10112],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Romania
+
+        var marker9 = new google.maps.Marker({
+                    position: new google.maps.LatLng(42.733883, 25.48583),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/aferim">Aferim!</a>',
+                    customInfo: [10041],
+                    map: map,
+            icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   
+                });
+        //Bugaria
+        var marker10 = new google.maps.Marker({
+                    position: new google.maps.LatLng(49.817492, 15.472962),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/aferim">Aferim ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/koza">Koza ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/marguerite">Marguerite</a>',
+                    customInfo: [10041, 10047, 10053],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Czech Republic
+        var marker11 = new google.maps.Marker({
+                    position: new google.maps.LatLng(52.132633, 5.291266),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/alice">Alice ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_lobster">The Lobster ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/neon_bull">Neon Bull ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_summer_of_sangaile">The Summer of Sangaile</a>',
+                    customInfo: [10156, 10035, 9999, 10002],
+                    map: map,
+            icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   
+                });
+        //Netherlands
+        var marker12 = new google.maps.Marker({
+                    position: new google.maps.LatLng(35.907757, 127.766922),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/alice_in_earnestland">Alice in Earnestland ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_beauty_inside">The Beauty Inside ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/gangnam_blues">Gangnam Blues ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/madonna_2015">Madonna</a>',
+                    customInfo: [10082, 10084, 10088, 10091],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //South Korea
+        var marker13 = new google.maps.Marker({
+                    position: new google.maps.LatLng(56.130366, -106.346771),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/4_quarters">4 Quarters ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_amina_profile">The Amina Profile ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/beeba_boys">Beeba Boys ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/closet_monster_2015">Closet Monster ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/overpass">Overpass ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_swimming_lesson">The Swimming Lesson ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_waiting_room">The Waiting Room ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/this_changes_everything">This Changes Everything ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/yo">Yo</a>',
+                    customInfo: [10013, 10137, 10031, 10043, 10163, 10027, 10117, 10172, 10012],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Canada
+        var marker14 = new google.maps.Marker({
+                    position: new google.maps.LatLng(30.375321, 69.345116),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/among_the_believers">Among The Believers</a>',
+                    customInfo: [10171],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Pakistan
+        var marker15 = new google.maps.Marker({
+                    position: new google.maps.LatLng(20.593684, 78.96288),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/angry_indian_goddesses">Angry Indian Goddesses ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/island_city">Island City ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/masaan">Masaan ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/parched">Parched</a>',
+                    customInfo: [10083, 10128, 10094, 10010],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //India
+        var marker16 = new google.maps.Marker({
+                    position: new google.maps.LatLng(51.165691, 10.451526),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/angry_indian_goddesses">Angry Indian Goddesses ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/big_father">Big Father, Small Father and Other Stories ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/chuck_norris_communism">Chuck Norris vs Communism ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/daewit">Daewit ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/heil">Heil ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/i_promise_you_anarchy">I Promise You Anarchy ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/isabel_in_winter">Isabel In Winter ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_memory_of_water">The Memory of Water ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/mustang">Mustang ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/one_breath">One Breath ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/our_last_tango_2015">Our Last Tango ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/paula">Paula ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_propaganda_game">The Propaganda Game ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/what_happens_in_your_brain_if_you">What Happens in Your Brain If You See A German Word Like...? ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sworn_virgin">Sworn Virgin ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_wednesday_child">The Wednesday Child</a>',
+                    customInfo: [10083, 10085, 10142, 10158, 10125, 10101, 10020, 10102, 9997, 10115, 10148, 10103, 10151, 10029, 10003, 10005],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                });
+        //Germany
+        var marker17 = new google.maps.Marker({
+                    position: new google.maps.LatLng(4.570868,  -74.297333),
+                    title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/anna_2015">Anna ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/siembra">Siembra ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/violence_2015">Violence ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/with_the_lips_closed">With The Lips Closed</a>',
+                    customInfo: [10098, 10104, 10107, 10134],
+                    map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                }); 
+        //Colombia
+        var marker18 = new google.maps.Marker({
+                   position: new google.maps.LatLng(33.886917, 9.537499),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/as_i_open_my_eyes">As I Open My Eyes</a>',
+                   customInfo: [9986],
+                   map: map
+            ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Tunisia
+
+       var marker19 = new google.maps.Marker({
+                   position: new google.maps.LatLng(50.503887, 4.469936),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/as_i_open_my_eyes">As I Open My Eyes ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/buddy">Buddy ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/evolution_2015">Evolution ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/marguerite">Marguerite ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/maryland">Maryland ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_sheep_of_erwin_s">The Sheep Of Erwin S. ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/valley_of_love">Valley of Love</a>',
+                   customInfo: [9986, 10016, 9992, 10053, 9996, 10024, 10061],
+                   map: map 
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Belgium
+
+       var marker20 = new google.maps.Marker({
+                   position: new google.maps.LatLng(31.046051, 34.851612),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/baba_joon">Baba Joon ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/demon_2015">Demon ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/tikkun">Tikkun</a>',
+                   customInfo: [10006, 10122, 10004],
+                   map: map  
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Israel
+
+      var marker21 = new google.maps.Marker({
+                   position: new google.maps.LatLng(38.963745, 35.243322),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/baskin">Baskin ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/mother_virgin_no_more">Mother Virgin No More ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/mustang">Mustang ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/north_2015">North</a>',
+                   customInfo: [10120, 10160, 9997, 10147],
+                   map: map
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Turkey
+
+  var marker22 = new google.maps.Marker({
+                   position: new google.maps.LatLng(35.86166, 104.195397),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/behemoth">Behemoth ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/kaili_blues">Kaili Blues ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_propaganda_game">The Propaganda Game</a>',
+                   customInfo: [10138, 10089, 10151],
+                   map: map 
+      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //China  
+
+ var marker23 = new google.maps.Marker({
+                   position: new google.maps.LatLng(14.058324, 108.277199),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/big_father">Big Father, Small Father and Other Stories</a>',
+                   customInfo: [10085],
+                   map: map  
+     ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Vietnam
+
+var marker24 = new google.maps.Marker({
+                   position: new google.maps.LatLng(40.143105, 47.576927),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/black">Black</a>',
+                   customInfo: [10015],
+                   map: map 
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Azerbaijan
+
+var marker25 = new google.maps.Marker({
+                   position: new google.maps.LatLng(48.379433, 31.16558),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/black">Black</a>',
+                   customInfo: [10015],
+                   map: map 
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Ukraine
+
+var marker26 = new google.maps.Marker({
+                   position: new google.maps.LatLng(28.394857, 84.124008),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_black_hen">The Black Hen</a>',
+                   customInfo: [10086],
+                   map: map  
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Nepal
+
+var marker27 = new google.maps.Marker({
+                   position: new google.maps.LatLng(15.870032, 100.992541),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_blue_hour">The Blue Hour</a>',
+                   customInfo: [10087],
+                   map: map 
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Thailand
+
+var marker28 = new google.maps.Marker({
+                   position: new google.maps.LatLng(55.378051, -3.435973),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/bolshoi_babylon">Bolshoi Babylon ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/carol_2015">Carol ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/chuck_norris_communism">Chuck Norris vs Communism ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/daniel">Dániel ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/legend_2015">Legend ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_lobster">The Lobster ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/my_nazi_legacy">My Nazi Legacy: What Our Fathers Did ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/palio_2015">Palio ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/parched">Parched ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/peggy_guggenheim">Peggy Guggenheim: Art Addict ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_program_2015">The Program ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/suffragette">Suffragette ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sunset_song">Sunset Song ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_survivalist">The Survivalist ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/this_is_england_90">This Is England 90 ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/tale_of_tales">Tale of Tales</a>',
+                   customInfo: [10140, 10042, 10142, 10017, 10050, 10035, 10146, 10149, 10010, 10150, 10036, 10057, 10058, 10130, 10038, 10059],
+                   map: map 
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //United Kingdom
+
+var marker29 = new google.maps.Marker({
+                   position: new google.maps.LatLng(-32.522779, -55.765835),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/clever">Clever ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/neon_bull">Neon Bull</a>',
+                   customInfo: [9988, 9999],
+                   map: map 
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Uruguay
+
+var marker30 = new google.maps.Marker({
+                   position: new google.maps.LatLng(-35.675147, -71.542969),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_club_2015">The Club ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_memory_of_water">The Memory of Water</a>',
+                   map: map,
+                   customInfo: [10099, 10102]
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+    
+     
+               });
+       //Chile
+var marker31 = new google.maps.Marker({
+                   position: new google.maps.LatLng(40.463667, -3.74922),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/crumbs">Crumbs ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/evolution_2015">Evolution ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_memory_of_water">The Memory of Water ★ </a>' +'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/on_reptile_saurs_in_cafe">On Reptile-Saurs in Cafes ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_propaganda_game">The Propaganda Game ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/walls_2015">Walls</a>',
+                   map: map,
+                   customInfo: [10121, 9992, 10102, 10162, 10151, 10118]
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+   
+               });
+       //Spain
+var marker32 = new google.maps.Marker({
+                   position: new google.maps.LatLng(-25.274398, 133.775136),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_daughter_2015">The Daughter</a>',
+                   map: map,
+                   customInfo: [9989]
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               
+   
+               });
+       //Australia
+var marker33 = new google.maps.Marker({
+                   position: new google.maps.LatLng(51.919438, 19.145136),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/demon_2015">Demon ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/efterskalv">The Here After</a>',
+                   map: map,
+                   customInfo: [10122, 9991]
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+    
+               });
+       //Poland
+var marker34 = new google.maps.Marker({
+                   position: new google.maps.LatLng(33.854721, 35.862285),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_drought_land">The Drought Land ★ </a>'+'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/waves_98">Waves 98</a>',
+                   map: map,
+                   customInfo: [10157, 10028]
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+   
+               });
+       //Lebanon
+var marker35 = new google.maps.Marker({
+                   position: new google.maps.LatLng(61.92411, 25.748151 ),
+                   title:  '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/first_world_problems">First World Problems</a>',
+                   map: map,
+                   customInfo: [10159]
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+ 
+       //Finland
+                    
+                });
+var marker36 = new google.maps.Marker({
+                  position: new google.maps.LatLng(-40.900557, 174.885971),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/free_in_deed">Free in Deed</a>',
+                  map: map,
+                  customInfo: [9993]
+    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //New Zealand
+      var marker37 = new google.maps.Marker({
+                  position: new google.maps.LatLng(56.26392, 9.501785),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/gold_coast_2015">Gold Coast ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/louder_than_bombs">Louder Than Bombs ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/what_we_become">What We Become ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/virgin_mountain">Virgin Mountain</a>',
+                  map: map,
+                  customInfo: [10045, 9995, 10133, 10039]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Denmark
+       var marker38 = new google.maps.Marker({
+                  position: new google.maps.LatLng(7.946527, -1.023194),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/gold_coast_2015">Gold Coast</a>',
+                  map: map,
+                  customInfo:[10045]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Ghana
+       var marker39 = new google.maps.Marker({
+                  position: new google.maps.LatLng(21.521757, -77.781167),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_good_night">The Good Night</a>',
+                  map: map,
+                  customInfo: [10161]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Cuba
+       var marker40 = new google.maps.Marker({
+                  position: new google.maps.LatLng(23.424076, 53.847818),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/he_named_me_malala">He Named Me Malala</a>',
+                  map: map,
+            customInfo: [10111]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //United Arab Emirates
+       var marker41 = new google.maps.Marker({
+                  position: new google.maps.LatLng(45.1, 15.2),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_high_sun_2015">The High Sun</a>',
+                  map: map,
+            customInfo: [10046]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Croatia
+       var marker42 = new google.maps.Marker({
+                  position: new google.maps.LatLng(46.151241, 14.995463),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_high_sun_2015">The High Sun</a>',
+                  map: map,
+            customInfo: [10046]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+       
+              });
+      //Slovenia
+       var marker43 = new google.maps.Marker({
+                  position: new google.maps.LatLng(44.016521, 21.005859),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_high_sun_2015">The High Sun</a>',
+                  map: map,
+            customInfo:[10046]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+           
+              });
+      //Serbia buraya kadar yaptim asagidan devam et
+       var marker44 = new google.maps.Marker({
+                  position: new google.maps.LatLng(12.879721, 121.774017),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/honor_thy_father">Honor Thy Father ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/invisible_2015">Invisible ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/violator">Violator</a>' ,
+                  map: map,
+            customInfo: [10008, 10113, 10131]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Philippines
+       var marker45 = new google.maps.Marker({
+                  position: new google.maps.LatLng(36.204824, 138.252924),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/i_am_a_hero">I am a Hero ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/makeup_room">Makeup Room ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/miss_hokusai">Miss Hokusa ★ </a>' +'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/yakuza_apocalypse">Yakuza Apocalypse: The Great War of the Underworld</a>',
+                  map: map,
+            customInfo: [10126, 10092, 10095, 10135]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Japan
+       var marker46 = new google.maps.Marker({
+                  position: new google.maps.LatLng(41.87194, 12.56738),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/italian_gangsters">Italian Gangsters ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/lampedusa_in_winter">Lampedusa in Winter ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/mediterranea_15">Mediterranea ★ </a>' +'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/peggy_guggenheim">Peggy Guggenheim: Art Addict ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_wait_2015">The Wait ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sworn_virgin">Sworn Virgin ★ </a>' +'<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/tale_of_tales">Tale of Tales</a>' ,
+                  map: map,
+            customInfo:[10145, 10114, 9985, 10150, 10048, 10003, 10059]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Italy
+      var marker47 = new google.maps.Marker({
+                  position: new google.maps.LatLng(23.69781, 120.960515),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_kids_2015">The Kids</a>',
+                  map: map,
+           customInfo: [10090]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+               });
+       //Taiwan
+       var marker48 = new google.maps.Marker({
+                  position: new google.maps.LatLng(48.669026, 19.699024),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/koza">Koza</a>',
+                  map: map,
+            customInfo: [10047]
+           ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Slovakia
+      var marker49 = new google.maps.Marker({
+                  position: new google.maps.LatLng(47.516231, 14.550072),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/lampedusa_in_winter">Lampedusa in Winter</a>',
+                  map: map,
+           customInfo: [10114]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Austria
+      var marker50 = new google.maps.Marker({
+                  position: new google.maps.LatLng(46.818188, 8.227512),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/lampedusa_in_winter">Lampedusa in Winter ★ </a>' + '<<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sworn_virgin">Sworn Virgin ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/yo">Yo</a>',
+                  map: map,
+           customInfo: [10114, 10003, 10012]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Switzerland
+      var marker51 = new google.maps.Marker({
+                  position: new google.maps.LatLng(22.396428, 114.109497),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/lazy_hazy_crazy">Lazy Hazy Crazy</a>',
+                  map: map,
+           customInfo: [9994]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Hong Kong
+      var marker52 = new google.maps.Marker({
+                  position: new google.maps.LatLng(39.074208, 21.824312),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_lobster">The Lobster ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/one_breath">One Breath</a>',
+                  map: map,
+           customInfo:[10035, 10115]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Greece
+      var marker53 = new google.maps.Marker({
+                  position: new google.maps.LatLng(-38.416097, -63.616672),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_memory_of_water">The Memory of Water ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/our_last_tango_2015">Our Last Tango ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/paula">Paula</a>',
+                  map: map,
+           customInfo:[10102, 10148, 10103]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+              });
+      //Argentina
+      var marker54 = new google.maps.Marker({
+                  position: new google.maps.LatLng(6.428055, -9.429499),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/out_of_my_hand">Out Of My Hand</a>',
+                  map: map,
+           customInfo:[10116]
+          ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                  //Liberia
+              });
+               var marker55 = new google.maps.Marker({
+                  position: new google.maps.LatLng(55.169438, 23.881275),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/peace_to_us_in_our_dreams">Peace To Us In Our Dreams ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_summer_of_sangaile">The Summer of Sangaile</a>',
+                  map: map,
+                    customInfo: [10056, 10002]
+                   ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                  //Lithuania
+              });
+               var marker56 = new google.maps.Marker({
+                  position: new google.maps.LatLng(61.52401, 105.318756),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/peace_to_us_in_our_dreams">Peace To Us In Our Dreams</a>',
+                  map: map,
+                    customInfo:[10056]
+                   ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                  //Russia
+              });
+                var marker57 = new google.maps.Marker({
+                  position: new google.maps.LatLng(9.145, 40.489673),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/price_of_love_2015">Price of Love</a>',
+                  map: map,
+                     customInfo:[10000]
+                    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                  //Ethiopia
+              });
+                 var marker58 = new google.maps.Marker({
+                  position: new google.maps.LatLng(40.339852, 127.510093),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/office_2015">Office - </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_propaganda_game">The Propaganda Game</a>',
+                  map: map,
+                      customInfo: [10129, 10151]
+                     ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                  //North Korea
+              });
+                 var marker59 = new google.maps.Marker({
+                  position: new google.maps.LatLng(25.354826, 51.183884),
+                  title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/mustang">Mustang ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/salongen">Dégradé</a>',
+                  map: map,
+                      customInfo: [9997, 10096]
+                     ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                  //Qatar
+             
+               });
+                  var marker60 = new google.maps.Marker({
+                   position: new google.maps.LatLng(47.162494, 19.503304),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/son_of_saul">Son of Saul ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_wednesday_child">The Wednesday Child</a>',
+                   map: map,
+                       customInfo: [10001, 10005]
+                      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Hungary
+               });
+                  var marker61 = new google.maps.Marker({
+                   position: new google.maps.LatLng(49.815273, 6.129583),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sunset_song">Sunset Song</a>',
+                   map: map,
+                       customInfo:[10058]
+                      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Luxembourg
+               });
+                  var marker62 = new google.maps.Marker({
+                   position: new google.maps.LatLng(41.153332, 20.168331),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sworn_virgin">Sworn Virgin</a>',
+                   map: map,
+                       customInfo:[10003]
+                      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Albania
+               });
+                  var marker63 = new google.maps.Marker({
+                   position: new google.maps.LatLng(42.602636, 20.902977),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/sworn_virgin">Sworn Virgin</a>',
+                   map: map,
+                       customInfo: [10003]
+                      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Kosovo
+               });
+                  var marker64 = new google.maps.Marker({
+                   position: new google.maps.LatLng(32.427908, 53.688046),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_man_who_became_a_horse">The Man Who Became a Horse ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/nahid">Nahid ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/taxi_teheran">Taxi Teheran</a>',
+                   map: map,
+                       customInfo: [10093, 9998, 10060]
+                      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Iran
+               });
+                  var marker65 = new google.maps.Marker({
+                   position: new google.maps.LatLng(6.42375, -66.58973),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/tisure">Tisure</a>',
+                   map: map,
+                       customInfo: [10165]
+                      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Venezulea
+               });
+                  var marker66 = new google.maps.Marker({
+                   position: new google.maps.LatLng(-14.235004, -51.92528),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/neon_bull">Neon Bull ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/to_my_beloved">To My Beloved ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_violin_teacher">The Violin Teacher</a>',
+                   map: map,
+                       customInfo: [9999, 10106, 10108]
+                      ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Brazil
+               });
+                   var marker67 = new google.maps.Marker({
+                   position: new google.maps.LatLng(23.684994, 90.356331),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/under_construction">Under Construction</a>',
+                   map: map,
+                        customInfo: [10097]
+                       ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Bangladesh
+               });
+                   var marker68 = new google.maps.Marker({
+                   position: new google.maps.LatLng(64.963051, -19.020835),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/virgin_mountain">Virgin Mountain</a>',
+                   map: map,
+                    customInfo: [10039]
+                       ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Iceland
+               });
+                   var marker69 = new google.maps.Marker({
+                   position: new google.maps.LatLng(60.472024, 8.468946),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/louder_than_bombs">Louder Than Bombs ★ </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_wave">The Wave</a>' ,
+                   map: map,
+                    customInfo: [9995, 10132]
+                       ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Norway
+               });
+                   var marker70 = new google.maps.Marker({
+                   position: new google.maps.LatLng(31.791702, -7.09262),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/much_loved_2015">Much Loved - </a>' + '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_wig">The Wig</a>' ,
+                   map: map,
+                   customInfo:[10055, 10030]
+                       ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   //Morocco
+               });
+                   var marker71 = new google.maps.Marker({
+                   position: new google.maps.LatLng(18.735693, -70.162651),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/yo">Yo</a>',
+                   map: map,
+                   customInfo: [10012]
+                       ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                       
+                   //Dominican Republic
+               });
+                
+                var marker72 = new google.maps.Marker({
+                   position: new google.maps.LatLng(53.41291, -8.24389),
+                   title: '<a href="http://www.stockholmfilmfestival.se/en/festival/2015/film/the_lobster">The Lobster</a>',
+                   map: map,
+                   customInfo : [10035]
+                    ,icon: "http://s8.postimg.org/yoi3hwgdt/map_pin_shadow.png (22KB)"
+                   
+                   //Irland
+               });
+ 
+
+                   var ourMarkers = [marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11, marker12, marker13, marker14, marker15, marker16, marker17, marker18, marker19, marker20, marker21, marker22, marker23, marker24, marker25, marker26, marker27, marker28, marker29, marker30, marker31, marker32, marker33, marker34, marker35, marker36, marker37, marker38, marker39, marker40, marker41, marker42, marker43, marker44, marker45, marker46, marker47, marker48, marker49, marker50, marker51, marker52, marker53, marker54, marker55, marker56, marker57, marker58, marker59, marker60, marker61, marker62, marker63, marker64, marker65, marker66, marker67, marker68, marker69, marker70, marker71, marker72];
+
+   var infoWindow =  new google.maps.InfoWindow({
+        content: ""
+    });	
+	
+
+	
+     for (var x = 0; x < ourMarkers.length; x++)
+{
+
+  var ourMarker = ourMarkers[x];
+
+	for (var i=0;i<ourMarker.customInfo.length;i++){
+		
+		 $.ajax({
+        url: "http://api.stockholmfilmfestival.se/v1/films/film/film_id/"+ourMarker.customInfo[i]+"/format/json/API-Key/YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH",
+        dataType: "json",
+        header: {'X-API-KEY': 'YQ8UtQp5fCQIDAknJLVXZLWvAcsWjpa86XPml3eH'},
+        success: function(result) {
+			console.log(result.filmName_en, result.filmInfoURL);
+            
+          
+        },
+        done:function(result){
+          //console.log(result);
+        }
+
+        
+    });
+	
+	
+	
+	}	
+	
+	
+
+
+   var contentString = '<div id="content">'+
+                                   ourMarker.title+
+                                  
+    	'</div>';
+	
+
+		
+	bindInfoWindow(ourMarker, map, infoWindow, contentString);
+
+                 
+                }
+				
+				
+				
+function bindInfoWindow(marker, map, infowindow, description) {
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(description);
+        infowindow.open(map, marker);
+        
+    });
+}
+	
+                
+
+     }
+        </script>
+    </head>
+    
+    <body>
+    <div class="top-bar">
+    <ul class="menu">
+    <a href="#map" class="smoothScroll"><li>MAP</li></a> 
+    <a href="http://www.stockholmfilmfestival.se/sv/festival/2015/program" class="buttonett"> <li>TICKETS</li></a>
+    <a href="#contact" class="smoothScroll"><li>CONTACT</li></a>
+</ul>
+</div>
+  <div class="header">
+      <h1 class="header-title"><a href="http://www.stockholmfilmfestival.se">STHLM FILM MAP</a></h1>
+    </div>
+    
+        <div class="mission-etc">
+        <h2>Mission statement</h2>
+        <br>
+            <p>At Hyper Island we love stories and movies. We are five digital ninjas that want to support Stockholm Film Festival in a digital way.
+
+Do you know where Stockholm Film Festival movies are from? Check that on the map below and find more magical facts as you scroll down.
+
+Don’t forget to turn off your mobile phones before the show starts. And enjoy all the films in the festival!</p></div>
+         
+        <!-- The element that will contain our Google Map. This is used in both the Javascript and CSS above. -->
+        <div id="map"></div>
+        
+        
+    <div id="banner"></div>
+        
+        
+
+
+</div>
+    <div id="dope">
+        </div> 
+        
+    <div class="STHLM"> 
+        <h3>STOCKHOLM FILM FESTIVAL</h3><br>
+
+        <p>The Stockholm International Film Festivalis an annual film festival held in Stockholm, Sweden. It was launched in 1990 and has been held every year in the second half of November. The aim is to broaden the selection of films in Sweden with creative new films of high quality and offer the visitor an orientation within modern film. With seminars, opportunities to meet actors and filmmakers during the festival, all means are given to make the film experience come full circle</p></div>
+        
+    <div id="carol"></div> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="carol-text">
+        HYPER ISLAND <br><br>
+         
+Hyper Island designs learning experiences thatchallenge companies and individuals to grow and stay competitive in an increasingly digitized world. Our range of immersive programs and courses seeks to equip you with the necessary knowledge and skills to lead the change and begin a journey of lifelong learning.<br></div>
+       
+
+
+        <div class="section-title">
+        
+        </div>
+        
+        <div id="team">
+            
+            <div class="profile-circles">
+                
+                <div class="profile">
+                    <div class="profile-pic natalie"></div>
+                    <p>Natalie</p>
+            
+                </div>
+
+                <div class="profile">
+                    <div class="profile-pic henry"></div>
+                    <p>Henry</p>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-pic sehmar"></div>
+                    <p>Semhar</p>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-pic oz"></div>
+                    <p>Özden</p>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-pic christian"></div>
+                    <p>Christian</p>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div id="contact">   
+       <img src="new100.png"><h2>CONTACT US:</h2>
+        <p><br>
+        natalie.taguchi@hyperisland.se<br>
+        henry.nilsson@hyperisland.se<br>
+        semhar.yohannes@hyperisland.se<br>
+       zehraozden.serdarli@hyperisland.se<br>
+        chrisitan.lonnquvist@hyperisland.se<br>
+        </p>                
+        </div>
+        
+      <img src="hyper_island-student_project-2in1-black_and_white.jpg" height="30%" width="30%">
+        
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="smoothscroll.js"></script>
+        
+  </body>
+</html>
